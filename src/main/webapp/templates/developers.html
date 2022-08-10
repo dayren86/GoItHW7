@@ -36,14 +36,35 @@
                 </div>
                 <div class="form-group">
                     <label for="sex">Sex</label>
-                    <input type="text" name="sex" class="form-control" id="sex" placeholder="Enter sex">
+                    <select class="form-select" aria-label="Default select example" id="sex" name="sex" th:field="*{sexValues}">
+                        <option selected>Select Sex</option>
+                        <option th:each="sex: ${sexValues}" th:value="${sex}"
+                                th:text="${sex.name}"></option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="salary">Salary</label>
                     <input type="text" name="salary" class="form-control" id="salary" placeholder="Enter salary">
                 </div>
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <select class="form-control" id="skills" name="skills" th:field="*{skills}">
+                        <option selected>Select Skills</option>
+                        <option th:each="requestsForSkill: ${requestsForSkills}"
+                                th:value="${requestsForSkill.id}"
+                                th:text="${requestsForSkill.position + ' ' + requestsForSkill.skillLevel}">
 
-
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="projects">Projects</label>
+                    <select class="form-select" aria-label="Default select example" id="projects" name="projects" th:field="*{projects}">
+                        <option selected>Select Projects</option>
+                        <option th:each="requestsForProject: ${requestsForProjects}" th:value="${requestsForProject.id}"
+                                th:text="${requestsForProject.projectName}"></option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Add Companies</button>
             </form>
         </div>
@@ -63,12 +84,32 @@
                 </div>
                 <div class="form-group">
                     <label for="updateSex">Sex</label>
-                    <input type="text" name="updateSex" class="form-control" id="updateSex" placeholder="Enter sex">
+                    <select class="form-select" aria-label="Default select example" id="updateSex" name="updateSex" th:field="*{sexValues}">
+                        <option selected>Select Sex</option>
+                        <option th:each="sex: ${sexValues}" th:value="${sex}"
+                                th:text="${sex.name}"></option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="updateSalary">Salary</label>
                     <input type="text" name="updateSalary" class="form-control" id="updateSalary"
                            placeholder="Enter salary">
+                </div>
+                <div class="form-group">
+                    <label for="updateSkills">Skills</label>
+                    <select class="form-select" aria-label="Default select example" id="updateSkills" name="updateSkills" th:field="*{skill}">
+                        <option selected>Select Skills</option>
+                        <option th:each="requestsForSkill: ${requestsForSkills}" th:value="${requestsForSkill.id}"
+                                th:text="${requestsForSkill.position + ' ' + requestsForSkill.skillLevel}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="updateProjects">Projects</label>
+                    <select class="form-select" aria-label="Default select example" id="updateProjects" name="updateProjects" th:field="*{projects}">
+                        <option selected>Select Projects</option>
+                        <option th:each="requestsForProject: ${requestsForProjects}" th:value="${requestsForProject.id}"
+                                th:text="${requestsForProject.projectName}"></option>
+                    </select>
                 </div>
 
 
@@ -88,5 +129,9 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -3,13 +3,14 @@ package data.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@ToString
 @Table(name = "skills")
 @Entity
 @Data
 @NoArgsConstructor
 public class Skills {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,18 +28,20 @@ public class Skills {
         this.skillLevel = skillLevel;
     }
 
+
+
     public enum Position {
-        Java,
-        CSharp,
+        JAVA,
+        CSHARP,
         JS,
-        CPlus
+        CPLUS
 
     }
 
     public enum SkillLevel {
-        Junior,
-        Middle,
-        Senior
+        JUNIOR,
+        MIDDLE,
+        SENIOR
     }
 }
 

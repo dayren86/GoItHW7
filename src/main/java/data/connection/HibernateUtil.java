@@ -17,11 +17,7 @@ public class HibernateUtil {
     }
 
     private HibernateUtil() {
-        Prefs prefs = new Prefs();
         sessionFactory = new Configuration()
-                .setProperty("hibernate.connection.url", prefs.getDB_JDBC_CONNECTION_URL())
-                .setProperty("hibernate.connection.username", prefs.getDB_JDBC_CONNECTION_LOGIN())
-                .setProperty("hibernate.connection.password", prefs.getDB_JDBC_CONNECTION_PASSWORD())
                 .addAnnotatedClass(Companies.class)
                 .addAnnotatedClass(Developers.class)
                 .addAnnotatedClass(Projects.class)
