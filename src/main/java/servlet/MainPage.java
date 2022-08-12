@@ -29,7 +29,7 @@ public class MainPage extends HttpServlet {
 
     @Override
     public void init() {
-//        new DbInitService().dbInit();
+        new DbInitService().dbInit();
 
         engine = new TemplateEngine();
 
