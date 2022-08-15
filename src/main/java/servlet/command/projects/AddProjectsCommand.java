@@ -16,7 +16,7 @@ public class AddProjectsCommand implements Command {
         Projects projects = new Projects();
         projects.setProjectName(req.getParameter("projectName"));
         projects.setProjectDescription(req.getParameter("projectDescription"));
-        projects.setDateCreation(LocalDate.parse(req.getParameter("dateCreation")));
+        projects.setDateCreation(LocalDate.now());
 
         new RequestsProjects().create(projects);
 

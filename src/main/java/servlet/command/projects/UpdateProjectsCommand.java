@@ -17,7 +17,7 @@ public class UpdateProjectsCommand implements Command {
         projects.setId(Integer.parseInt(req.getParameter("updateId")));
         projects.setProjectName(req.getParameter("updateProjectName"));
         projects.setProjectDescription(req.getParameter("updateProjectDescription"));
-        projects.setDateCreation(LocalDate.parse(req.getParameter("updateDateCreation")));
+        projects.setDateCreation(LocalDate.now());
 
         new RequestsProjects().update(projects);
 
